@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Video Modal</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="btn">
+            <div class="play"></div>
+            <p>paly video</p>
+        </div>
+        <div class="clip">
+            <video src="http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4" controls></video>
+            <b class="close">close</b>
+        </di>
+
+        <script>
+            let btn = document.querySelector('.btn')
+            let clip = document.querySelector('.clip')
+            let close= document.querySelector('.close')
+            let video= document.querySelector('.video')
+            btn.onclick = function () {
+                btn.classList.add('active')
+                clip.classList.add('active')
+                video.currentTime =0
+                video.play()
+            }
+
+            close.onclick = function () {
+                btn.classList.remove('active')
+                clip.classList.remove('active')
+                video.pause()
+            }
+        </script>
+    </body>
+</html>
