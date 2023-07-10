@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg,#8430ed, #ff1252);
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+
+}
+
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  /* 重点了解 */
+  transform-origin: 100px;
+  transition: 0.6s;
+  transform: rotate(0deg) translateX(80px);
+  transition-delay: calc(0.1s * var(--i));
+}
+
+.menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 4px rgba(0,0,0, 0.15);
+  color: #000;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  transition: 0.5s;
+
+}
+
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.toggle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  z-index: 99999;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0,0,0,0.15);
+  font-size: 2em;
+  transition: 1.25s;
+}
+
+.menu.active .toggle {
+  transform: rotate(315deg);
+}
